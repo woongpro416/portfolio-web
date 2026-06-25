@@ -1107,8 +1107,7 @@ const projects = [
     readmeFeatures: ['메인 비주얼, 관광 명소, 여행 정보, 배너 영역 구성', '안산 12경, 안산 BIG5 가치, 안산시티투어 서브 페이지 구성', '공통 헤더, GNB, LNB, 푸터 반복 구현', '로그인 화면 UI 마크업과 반응형 CSS 구성'],
     run: ['index.html을 브라우저에서 직접 열어 확인', '로컬 서버 확인 시 python -m http.server 8000 실행 후 http://localhost:8000/index.html 접속'],
     test: ['대표 페이지와 서브 페이지 이동 확인', '이미지, 폰트, CSS 상대 경로 확인', '미구현 링크가 404로 이동하지 않는지 확인', 'PC/모바일 폭에서 레이아웃 확인'],
-    erd: 'DB를 사용하지 않는 정적 웹사이트입니다.',
-    erdImage: {src:'portfolio-assets/erd/ansan-culture-tour-erd.png', alt:'Ansan Culture Tour ERD and structure diagram', caption:'Ansan Culture Tour 구조 다이어그램'},
+    hideErd: true,
     apiSpec: ['백엔드 API를 사용하지 않습니다.', '로그인 화면은 실제 인증 기능이 없는 UI 마크업입니다.'],
     limitations: ['빌드 도구, 컴포넌트 분리, 템플릿 엔진, 백엔드가 없습니다.', '로그인은 UI만 구현되어 실제 인증이 없습니다.', '시맨틱 마크업, 접근성, 모바일 메뉴 완성도는 개선 여지가 있습니다.'],
     troubleshooting: ['정적 사이트라 GitHub Pages 같은 정적 호스팅이 가장 적합하다고 정리했습니다.', '존재하지 않는 CSS 참조와 404로 이동하던 미구현 내부 링크를 정리했습니다.', '로그인 화면은 실제 인증이 없는 UI 마크업임을 한계로 명시했습니다.'],
@@ -1144,7 +1143,8 @@ const projects = [
     readmeFeatures: ['인천 관광, 문화행사, 교통, 맛집/숙박/쇼핑 콘텐츠 페이지', '회원가입, 로그인, 마이페이지, 회원 탈퇴', '공지사항과 리뷰 게시판 CRUD, 검색, 첨부파일 업로드', '관리자 권한 기반 공지사항 관리와 회원 관리'],
     run: ['PostgreSQL에서 CREATE DATABASE incheon 실행', 'incheon/src/main/resources/application.yaml DB 접속 정보 확인', 'incheon 폴더에서 gradlew.bat bootRun 실행', 'http://localhost:8184 접속'],
     test: ['회원가입/로그인/마이페이지 흐름 확인', '비회원/회원/관리자 권한별 접근 가능 화면 확인', '공지사항과 리뷰 게시판 CRUD, 검색, 첨부파일 업로드 확인', 'GIF 시연 자료 기준 주요 화면 동작 재현'],
-    erd: 'DB를 사용하지 않는 프로젝트라 ERD를 제공하지 않습니다.',
+    erd: 'Member, Notice, Review, PostAttachment 중심 관계입니다. 회원은 공지사항과 리뷰 게시글을 작성하고, 게시글 첨부파일은 게시글 메타데이터와 분리해 저장합니다.',
+    erdImage: {src:'portfolio-assets/erd/incheon-culture-tour-erd.png', alt:'Incheon Culture Tour ERD', caption:'Incheon Culture Tour ERD'},
     apiSpec: ['서버 사이드 렌더링 기반 MVC route 중심 프로젝트입니다.', 'GET /, GET/POST /member/join, GET/POST /member/login', '공지사항과 리뷰 목록/상세/작성/수정/삭제 route 제공', '정확한 route는 controller 소스와 GitHub README 기준으로 확인합니다.'],
     limitations: ['관광 정보는 정적 콘텐츠 중심이라 최신 데이터 자동 갱신이 어렵습니다.', 'API 명세가 Swagger 형태로 분리되어 있지 않아 controller 기준 문서화가 필요합니다.', '관광 API, 지도 API, 검색 필터, 접근성 개선을 추가할 수 있습니다.'],
     troubleshooting: ['정적 퍼블리싱 파일을 Thymeleaf 템플릿으로 확장하면서 정적 리소스 경로와 template 경로를 분리했습니다.', '회원/관리자 권한이 섞이지 않도록 Spring Security 접근 제어를 적용했습니다.', '첨부파일은 PostAttachment에는 메타데이터, 서버 파일 시스템에는 실제 파일을 저장하는 방식으로 책임을 나눴습니다.'],
@@ -1565,6 +1565,10 @@ function renderReadmeCode(value){
 }
 
 function renderErdImage(project, fallback){
+  if(project.hideErd){
+    return '';
+  }
+
   if(!project.erdImage?.src){
     return renderReadmeCode(fallback);
   }
@@ -1623,7 +1627,7 @@ function renderReadme(project){
     ${renderReadmeCode(project.architecture || '아키텍처 요약은 GitHub README에 정리했습니다.')}
 
 
-    <h2>6. ERD</h2>
+    ${project.hideErd ? '' : '<h2>6. ERD</h2>'}
     ${renderErdImage(project, project.erd || 'ERD는 GitHub README 또는 별도 문서에서 확인합니다.')}
 
     <h2>7. API 명세</h2>
