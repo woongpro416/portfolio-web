@@ -3,7 +3,24 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Park JaeWoong — GitHub Style Portfolio</title>
+<title>박재웅 | Backend / AI Vision Portfolio</title>
+<meta name="description" content="박재웅 포트폴리오입니다. FastAPI AI 분석 서버, Spring Boot 백엔드, PostgreSQL 저장 흐름, YOLO/OCR 기반 관제 프로젝트를 정리했습니다." />
+<meta name="author" content="Park JaeWoong" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://woongpro416.github.io/portfolio-web/" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Park JaeWoong Portfolio" />
+<meta property="og:title" content="박재웅 | Backend / AI Vision Portfolio" />
+<meta property="og:description" content="FastAPI, Spring Boot, PostgreSQL, YOLO/OCR 기반 프로젝트와 API 통합 경험을 정리한 신입 개발자 포트폴리오입니다." />
+<meta property="og:url" content="https://woongpro416.github.io/portfolio-web/" />
+<meta property="og:image" content="https://woongpro416.github.io/portfolio-web/portfolio-assets/screenshots/05-traffic-analytics-system/01_home.png" />
+<meta property="og:image:alt" content="Traffic Analytics dashboard preview" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="박재웅 | Backend / AI Vision Portfolio" />
+<meta name="twitter:description" content="FastAPI, Spring Boot, PostgreSQL, YOLO/OCR 기반 프로젝트와 API 통합 경험을 정리한 포트폴리오입니다." />
+<meta name="twitter:image" content="https://woongpro416.github.io/portfolio-web/portfolio-assets/screenshots/05-traffic-analytics-system/01_home.png" />
+<meta name="theme-color" content="#24292f" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -476,59 +493,6 @@ header{
   display:inline-flex;
 }
 
-/* CONTRIBUTION / TIMELINE */
-.contrib-section{
-  background:var(--canvas);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:1rem;
-  margin-bottom:1.45rem;
-}
-.contrib-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap:1rem;
-  margin-bottom:.9rem;
-}
-.contrib-title{
-  font-weight:600;
-}
-.contrib-title span{
-  color:var(--muted);
-  font-weight:400;
-}
-.contrib-grid{
-  display:grid;
-  grid-template-columns:repeat(26,1fr);
-  gap:3px;
-}
-.contrib-cell{
-  aspect-ratio:1;
-  border-radius:2px;
-  background:#ebedf0;
-  border:1px solid rgba(27,31,36,.04);
-}
-.l1{background:#9be9a8;}
-.l2{background:#40c463;}
-.l3{background:#30a14e;}
-.l4{background:#216e39;}
-.contrib-footer{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:1rem;
-  color:var(--muted);
-  font-size:.75rem;
-  margin-top:.8rem;
-}
-.legend{
-  display:flex;
-  align-items:center;
-  gap:.3rem;
-}
-.legend .contrib-cell{width:12px;height:12px;aspect-ratio:auto;}
-
 /* README */
 .readme-section{
   border:1px solid var(--border);
@@ -939,7 +903,6 @@ header{
   .avatar{width:168px;height:168px;font-size:3.5rem;}
   .status-badge{right:-22px;bottom:8px;}
   .pinned-grid,.early-grid,.skill-groups,.preview-grid{grid-template-columns:1fr;}
-  .contrib-grid{grid-template-columns:repeat(13,1fr);}
   .page-remote{
     right:.75rem;
     bottom:.75rem;
@@ -982,7 +945,7 @@ header{
       <h1 class="profile-name">박재웅</h1>
       <div class="profile-username">@wodnddk97</div>
       <p class="profile-bio">
-        FastAPI 기반 AI 분석 서버와 Spring Boot 백엔드, PostgreSQL 저장 흐름을 연결해 본 신입 개발자입니다.
+        FastAPI 기반 AI 분석 서버와 Spring Boot 백엔드, PostgreSQL 저장 흐름을 연결해 본 신입 개발자입니다.<br />
         교통 분석, YOLO/OCR, 예지보전, 관제 대시보드 프로젝트를 통해 데이터 흐름과 API 통합에 집중해 왔습니다.
       </p>
 
@@ -1102,11 +1065,11 @@ const projects = [
     link: 'https://github.com/woongpro416/ansan-culture-tour',
     links: [
       {label:'GitHub', url:'https://github.com/woongpro416/ansan-culture-tour'},
-      {label:'Live Demo', url:'https://woongpro416.github.io/ansan-culture-tour/'}
+      {label:'Static Preview', url:'https://woongpro416.github.io/ansan-culture-tour/'}
     ],
     tags: ['HTML5', 'CSS3', 'Responsive', 'Static Site', 'GitHub Pages'],
     overview: '백엔드나 빌드 도구 없이 정적 파일과 이미지 자산만으로 구성한 초기 퍼블리싱 프로젝트입니다. 메인/서브 페이지, GNB/LNB, 비주얼 영역, 관광지 카드, 푸터를 직접 구현했습니다.',
-    role: ['메인 페이지와 관광명소/테마여행/로그인 화면 마크업 구성', '공통 헤더, 메뉴, 푸터 반복 구현으로 레이아웃 구조 학습', '관광지 카드, 탭형 콘텐츠, radio/hover 기반 UI 실습', '누락 CSS 참조와 미구현 링크를 정리해 로컬 실행 가능 상태로 보완'],
+    role: ['개인 프로젝트로 화면 구조 설계부터 마크업, 스타일링, 문서화까지 전체 범위 수행', '메인 페이지와 관광명소/테마여행/로그인 화면 마크업 구성', '공통 헤더, 메뉴, 푸터 레이아웃을 반복 적용하며 페이지 구조 정리', '관광지 카드, 탭형 콘텐츠, radio/hover 기반 UI 실습', '누락 CSS 참조와 미구현 링크를 정리해 로컬 실행 가능 상태로 보완'],
     architecture: 'index.html\n├─ sub1.html  : 안산 12경\n├─ sub12.html : 안산 BIG5 가치\n├─ sub21.html : 안산시티투어\n└─ log.html   : 로그인 UI\n\ncommon.css / responsive.css / main.css / sub_common.css',
     readmeFeatures: ['메인 비주얼, 관광 명소, 여행 정보, 배너 영역 구성', '안산 12경, 안산 BIG5 가치, 안산시티투어 서브 페이지 구성', '공통 헤더, GNB, LNB, 푸터 반복 구현', '로그인 화면 UI 마크업과 반응형 CSS 구성'],
     run: ['index.html을 브라우저에서 직접 열어 확인', '로컬 서버 확인 시 python -m http.server 8000 실행 후 http://localhost:8000/index.html 접속'],
@@ -1137,12 +1100,12 @@ const projects = [
     link: 'https://github.com/woongpro416/Incheon_Culture-Tour',
     links: [
       {label:'GitHub', url:'https://github.com/woongpro416/Incheon_Culture-Tour'},
-      {label:'Live Demo', url:'https://woongpro416.github.io/Incheon_Culture-Tour/'},
+      {label:'Static Preview', url:'https://woongpro416.github.io/Incheon_Culture-Tour/'},
       {label:'Docker Image', url:'https://hub.docker.com/r/teamweb802/tour-incheon'}
     ],
     tags: ['Spring Boot 3', 'Thymeleaf', 'PostgreSQL', 'Spring Security', 'JPA', 'HTML/CSS', 'Team Project'],
     overview: '인천 지역 문화·관광 정보를 제공하고 회원, 리뷰 게시판, 공지사항, 관리자 기능을 결합한 Spring Boot MVC 웹 애플리케이션입니다.',
-    role: ['관광 정보 정적 페이지와 콘텐츠 레이아웃 구현 참여', 'Spring Boot MVC 구조에서 화면 템플릿과 기능 흐름 통합 참여', '회원/게시판/관리자 기능 테스트 및 산출물 정리 참여', 'README, 실행 방법, 프로젝트 구조, 시연 자료 정리'],
+    role: ['팀 프로젝트에서 서브 페이지 전체 화면 구성 주도', '공통 헤더, 푸터, sidebar 메뉴 레이아웃 설계 및 페이지별 적용', '관광 정보 콘텐츠 페이지의 화면 구조와 스타일 정리', 'Spring Boot MVC 구조에서 Thymeleaf 템플릿과 정적 리소스 경로 통합 확인', 'README, 실행 방법, 프로젝트 구조, 시연 자료 정리'],
     architecture: 'Browser\n→ Thymeleaf View\n→ Spring MVC Controller\n→ Service\n→ Repository\n→ PostgreSQL\n\nStatic assets: CSS / JS / images',
     readmeFeatures: ['인천 관광, 문화행사, 교통, 맛집/숙박/쇼핑 콘텐츠 페이지', '회원가입, 로그인, 마이페이지, 회원 탈퇴', '공지사항과 리뷰 게시판 CRUD, 검색, 첨부파일 업로드', '관리자 권한 기반 공지사항 관리와 회원 관리'],
     run: ['PostgreSQL에서 CREATE DATABASE incheon 실행', 'incheon/src/main/resources/application.yaml DB 접속 정보 확인', 'incheon 폴더에서 gradlew.bat bootRun 실행', 'http://localhost:8184 접속'],
@@ -1175,13 +1138,14 @@ const projects = [
     links: [
       {label:'GitHub', url:'https://github.com/woongpro416/logitech'},
       {label:'Live App', url:'https://woongpro416.github.io/logitech/#/'},
-      {label:'API', url:'https://logitech-backend-9kg2.onrender.com/items/list'},
-      {label:'DockerHub FE', url:'https://hub.docker.com/r/devwoong416/logitech-frontend'},
-      {label:'DockerHub BE', url:'https://hub.docker.com/r/devwoong416/logitech-backend'}
+      {label:'API Endpoint', url:'https://logitech-backend-9kg2.onrender.com/items/list'},
+      {label:'Deliverables', url:'https://app.notion.com/p/Logitech-32526ace0023809eaf3df89a970421c3?source=copy_link'},
+      {label:'Docker Image FE', url:'https://hub.docker.com/r/devwoong416/logitech-frontend'},
+      {label:'Docker Image BE', url:'https://hub.docker.com/r/devwoong416/logitech-backend'}
     ],
     tags: ['Vue 3', 'Composition API', 'Spring Boot 3', 'Spring Security', 'JPA', 'PostgreSQL', 'Docker Compose'],
     overview: '프론트엔드와 백엔드를 분리하고 Docker Compose로 실행할 수 있게 구성한 개인 쇼핑몰 프로젝트입니다. API 응답은 DTO를 사용하고, 프론트엔드는 공용 Axios client와 Pinia store를 사용하는 구조로 정리했습니다.',
-    role: ['Vue 화면, 라우터, Pinia 상태, Axios API client 구성', '회원가입/로그인/마이페이지, 상품 목록/상세, 장바구니, 주문, 리뷰, Q&A 구현', '관리자 대시보드와 회원/상품/주문/리뷰/Q&A 관리 기능 구현', 'Spring Boot controller/service/repository/dto/domain 계층 분리와 validation/exception 처리 정리'],
+    role: ['개인 프로젝트로 프론트엔드, 백엔드, DB, Docker 실행 환경, 문서화까지 전체 개발 범위 수행', 'Vue 화면, 라우터, Pinia 상태, Axios API client 구성', '회원가입/로그인/마이페이지, 상품 목록/상세, 장바구니, 주문, 리뷰, Q&A 구현', '관리자 대시보드와 회원/상품/주문/리뷰/Q&A 관리 기능 구현', 'Spring Boot controller/service/repository/dto/domain 계층 분리와 validation/exception 처리 정리'],
     architecture: 'Browser\n→ Vue 3 + Vite + Nginx\n→ /api proxy\n→ Spring Boot 3 API\n→ PostgreSQL\n\nDocker Compose: frontend / backend / postgres',
     readmeFeatures: ['회원가입, 로그인, 로그아웃, 마이페이지', '상품 목록/상세, 장바구니, 주문 내역/상세 조회', '리뷰와 Q&A 등록/수정/삭제', '관리자 대시보드와 회원/상품/주문/리뷰/Q&A 관리'],
     run: ['docker compose up --build 실행', 'Frontend http://localhost:5173, Backend http://localhost:8090 확인', '테스트 계정 admin1 / 1234, user100 / 1234 사용'],
@@ -1212,14 +1176,15 @@ const projects = [
     link: 'https://github.com/woongpro416/IKEA-shopping-mall',
     links: [
       {label:'GitHub', url:'https://github.com/woongpro416/IKEA-shopping-mall'},
-      {label:'Live App', url:'https://woongpro416.github.io/IKEA-shopping-mall/#/'},
-      {label:'DockerHub FE', url:'https://hub.docker.com/r/kimmj6466/team4-frontend'},
-      {label:'DockerHub BE', url:'https://hub.docker.com/r/kimmj6466/team4-backend'},
-      {label:'DockerHub DB', url:'https://hub.docker.com/r/kimmj6466/team4-db'}
+      {label:'Frontend Demo', url:'https://woongpro416.github.io/IKEA-shopping-mall/#/'},
+      {label:'Project Docs', url:'https://app.notion.com/p/33b26ace0023806394b3fcc6b55d6c67?source=copy_link'},
+      {label:'Docker Image FE', url:'https://hub.docker.com/r/kimmj6466/team4-frontend'},
+      {label:'Docker Image BE', url:'https://hub.docker.com/r/kimmj6466/team4-backend'},
+      {label:'Docker Image DB', url:'https://hub.docker.com/r/kimmj6466/team4-db'}
     ],
     tags: ['Vue 3', 'Vite', 'Pinia', 'Axios', 'Spring Boot 3', 'Spring Security', 'JWT', 'JPA', 'PostgreSQL', 'Swagger', 'Docker'],
     overview: '가구 탐색부터 장바구니, 주문, 고객지원, 관리자 운영까지 하나의 흐름으로 연결한 프론트엔드/백엔드 분리형 팀 프로젝트입니다. 권한은 비회원, 회원, 관리자로 분리하고 Swagger 기반 API 문서와 실브라우저 테스트 산출물을 정리했습니다.',
-    role: ['백엔드 및 DB 설계와 구현 담당', 'Spring Boot controller, service, repository, dto, domain 계층 기반 API 구성', 'JWT 인증, 회원 정보, 상품, 장바구니, 주문, 리뷰, QnA, 공지, 관리자 API 구현 참여', 'Swagger API 문서화와 테스트/산출물 정리 참여', '팀원과 요구사항, 화면 흐름, API 계약을 맞추며 통합 검수'],
+    role: ['2인 팀 프로젝트에서 프론트엔드/백엔드 역할을 분리하고 백엔드 전체 개발 범위 수행', 'Spring Boot controller, service, repository, dto, domain 계층 기반 API 구성', 'JWT 인증, 회원 정보, 상품, 장바구니, 주문, 리뷰, QnA, 공지, 관리자 API 구현', 'PostgreSQL 기반 DB 설계와 JPA entity/repository 구성', 'Swagger API 문서화와 프론트엔드 연동을 위한 API 계약 검수'],
     architecture: 'User / Admin\n→ Vue 3 + Vite + Pinia + Axios\n→ REST API / JSON\n→ Spring Boot 3 + Security + JPA + JWT\n→ PostgreSQL\n\nDocs: Swagger UI / Notion 산출물 / 실브라우저 테스트 59 PASS',
     checkpoints: {
       run: ['Backend: ikea-backend에서 ./gradlew bootRun 실행', 'Frontend: ikea-frontend에서 npm install 후 npm run dev 실행', 'PostgreSQL은 DB ikea, user postgres, password 1234 기준으로 연결'],
@@ -1251,11 +1216,12 @@ const projects = [
     statusClass: 'progress',
     link: 'https://github.com/angela860807/Traffic_Analytics_Proposal',
     links: [
-      {label:'GitHub', url:'https://github.com/angela860807/Traffic_Analytics_Proposal'}
+      {label:'GitHub', url:'https://github.com/angela860807/Traffic_Analytics_Proposal'},
+      {label:'Work Log', url:'https://app.notion.com/p/Traffic-35126ace002380a2aceac70a3a8a89ae?source=copy_link'}
     ],
     tags: ['FastAPI', 'YOLO', 'PaddleOCR', 'Spring Boot', 'JWT', 'PostgreSQL', 'Vue', 'Docker', 'Time-series', 'Predictive Maintenance'],
     overview: '카메라 영상에서 차량 bbox를 감지하고 번호판 OCR과 속도 계산을 수행한 뒤, Spring Boot API와 PostgreSQL에 감지 로그/차량 흐름/과속 위반/시간대별 통계를 저장하는 교통 분석 시스템입니다. 후반부에는 카메라 FPS, 프레임 드롭, 지연, 흐림 같은 상태 지표를 시계열로 감시하고 이상 이벤트와 정비 프로세스로 연결하는 예지보전 흐름까지 확장했습니다.',
-    role: ['FastAPI AI 서버와 Spring Boot 저장 API 간 request/response 데이터 계약 정리', 'detection log, flow event, speed violation 저장 흐름을 기준으로 API 통합 구조 검증', '차량 bbox 이벤트, best frame, high-resolution OCR 흐름을 시연 가능한 파이프라인으로 정리', 'Docker Compose 기반 실행 순서와 Swagger 테스트 절차 문서화', '예지보전 확장에서 health sample → anomaly event → maintenance ticket 흐름 설계 보조'],
+    role: ['Raspberry Pi 기반 카메라 영상 수집 구조를 운영 가정으로 두고 FastAPI 분석 흐름 정리', '카메라 영상 데이터 수집부터 AI 분석, 저장 API, 대시보드까지 이어지는 시스템 흐름 문서화', '프론트엔드와 백엔드 API 연동 검수 및 전체 코드 병합 관리', 'FastAPI AI 서버와 Spring Boot 저장 API 간 request/response 데이터 계약 정리', '기업 프로젝트 시연과 발표 진행'],
     architecture: 'Video / Camera / Raspberry Pi\n→ FastAPI AI Server\n   ├─ vehicle YOLO bbox\n   ├─ plate YOLO + OCR\n   ├─ speed tracking\n   └─ high-res OCR\n→ Spring Boot API\n→ PostgreSQL\n→ Vue Dashboard\n\nPredictive Maintenance Extension\nCamera Health Sample → Rule/Trend Detection → Anomaly Event → Maintenance Ticket → Admin Ops Dashboard',
     checkpoints: {
       run: ['프로젝트 루트에서 docker compose up -d postgres-db spring-backend fastapi-server frontend 실행', 'FastAPI 단독 확인 시 fastapi-server에서 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000 실행', 'Frontend는 Docker 기준 http://localhost:5174, 로컬 Vite 기준 http://localhost:5173에서 확인'],
@@ -1289,14 +1255,15 @@ const projects = [
     links: [
       {label:'GitHub', url:'https://github.com/woongpro416/iat-ai-phm-personal'},
       {label:'Live App', url:'https://woongpro416.github.io/iat-ai-phm-personal/'},
-      {label:'API', url:'https://iat-ai-safety-backend.onrender.com/api/dashboard/summary'},
-      {label:'DockerHub FE', url:'https://hub.docker.com/r/devwoong416/iat-ai-safety-frontend'},
-      {label:'DockerHub BE', url:'https://hub.docker.com/r/devwoong416/iat-ai-safety-backend'},
-      {label:'DockerHub AI', url:'https://hub.docker.com/r/devwoong416/iat-ai-safety-ai-server'}
+      {label:'API Endpoint', url:'https://iat-ai-safety-backend.onrender.com/api/dashboard/summary'},
+      {label:'Work Log', url:'https://app.notion.com/p/34826ace002380cfafe2d4d035fd24f4?source=copy_link'},
+      {label:'Docker Image FE', url:'https://hub.docker.com/r/devwoong416/iat-ai-safety-frontend'},
+      {label:'Docker Image BE', url:'https://hub.docker.com/r/devwoong416/iat-ai-safety-backend'},
+      {label:'Docker Image AI', url:'https://hub.docker.com/r/devwoong416/iat-ai-safety-ai-server'}
     ],
     tags: ['Vue 3', 'Spring Boot', 'FastAPI', 'YOLO', 'PHM', 'RandomForest', 'PostgreSQL', 'Docker Compose'],
     overview: '인천공항 무인 셔틀 운영 환경을 가정해 장비 센서 데이터, 이미지 기반 안전 이벤트, 알림 이력, PHM 분석 결과를 통합 관제하는 개인 포트폴리오 프로젝트입니다.',
-    role: ['Vue 관제 화면과 Spring Boot device/status/safety/alert API 데이터 흐름 구성', 'Spring Boot에서 FastAPI 분석 결과를 안전 이벤트와 PHM 결과로 저장하는 연동 구조 구현', '장비 온도/진동/소음 기반 PHM rule baseline 결과 저장 흐름 검증', '이미지 업로드 → YOLO 분석 → 원본/bbox 이미지 분리 저장 → 화면 표시 흐름 구현', 'PHM 학습 데이터 계약, time-aware split, rolling feature, RandomForest baseline 평가 파이프라인 정리'],
+    role: ['개인 프로젝트로 프론트엔드, 백엔드, AI 서버, DB, Docker 실행 환경, 문서화까지 전체 개발 범위 수행', 'Vue 관제 화면과 Spring Boot device/status/safety/alert API 데이터 흐름 구성', 'Spring Boot에서 FastAPI 분석 결과를 안전 이벤트와 PHM 결과로 저장하는 연동 구조 구현', '장비 온도/진동/소음 기반 PHM rule baseline 결과 저장 흐름 검증', '이미지 업로드 → YOLO 분석 → 원본/bbox 이미지 분리 저장 → 화면 표시 흐름 구현', 'PHM 학습 데이터 계약, time-aware split, rolling feature, RandomForest baseline 평가 파이프라인 정리'],
     architecture: 'Operator\n→ Vue Frontend\n→ Spring Boot Backend\n   ├─ device/status/safety/alert API\n   └─ FastAPI RestClient 연동\n→ PostgreSQL\n→ FastAPI AI Server\n   ├─ PHM rule baseline\n   ├─ YOLO image analysis\n   └─ ML baseline training',
     checkpoints: {
       run: ['docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build로 전체 실행', '최근 변경 서비스만 확인할 때는 ai-server, backend, frontend만 재빌드', 'Frontend 5173, Spring Swagger 8402, FastAPI Docs 8000 기준으로 확인'],
@@ -1335,7 +1302,7 @@ const projects = [
     ],
     tags: ['FastAPI', 'Pydantic', 'SQLite', 'PyTorch', 'Transformers', 'Docker', 'Hugging Face Spaces', 'SSE'],
     overview: 'FastAPI와 Hugging Face Transformers를 사용해 만든 실무 연습용 한글 챗봇입니다. app.py를 기준 실행 파일로 사용하고, Dockerfile을 통해 Hugging Face Spaces에서 실행되도록 정리했습니다.',
-    role: ['브라우저 기반 채팅 UI와 POST /chat API 구현', '세션별 대화 기록 조회와 사용자 피드백 저장 구현', '관리자 피드백 조회와 training-data.jsonl export 흐름 구성', 'Qwen/Qwen2.5-0.5B-Instruct 기반 응답과 SSE 스트리밍 응답 시도', 'Spaces 배포에 필요한 app.py, Dockerfile, requirements.txt, README 정리'],
+    role: ['개인 프로젝트로 FastAPI 앱, 채팅 UI, SQLite 저장 구조, Docker 배포, 문서화까지 전체 개발 범위 수행', '브라우저 기반 채팅 UI와 POST /chat API 구현', '세션별 대화 기록 조회와 사용자 피드백 저장 구현', '관리자 피드백 조회와 training-data.jsonl export 흐름 구성', 'Qwen/Qwen2.5-0.5B-Instruct 기반 응답과 SSE 스트리밍 응답 시도', 'Spaces 배포에 필요한 app.py, Dockerfile, requirements.txt, README 정리'],
     architecture: 'Browser Chat UI\n→ FastAPI app.py\n   ├─ /chat\n   ├─ /history/{session_id}\n   ├─ /feedback\n   ├─ /admin/feedback\n   └─ /training-data.jsonl\n→ SQLite\n→ Hugging Face Transformers\n→ Docker / Hugging Face Spaces',
     checkpoints: {
       run: ['로컬 실행: venv 활성화 후 pip install -r requirements.txt, python app.py', '브라우저에서 http://localhost:7860, API 문서는 http://localhost:7860/docs 확인', 'Hugging Face Spaces는 Docker SDK로 app.py, requirements.txt, Dockerfile 기준 배포'],
@@ -1676,30 +1643,6 @@ function selectProject(id, shouldScroll = true){
     requestAnimationFrame(() => {
       document.getElementById('projectPreview').scrollIntoView({behavior:'smooth', block:'start'});
     });
-  }
-}
-
-function renderTimeline(){
-  const grid = document.getElementById('timelineGrid');
-  const levels = [
-    ...Array(12).fill(1),
-    ...Array(16).fill(2),
-    ...Array(14).fill(3),
-    ...Array(10).fill(4),
-    ...Array(20).fill(2),
-    ...Array(16).fill(3),
-    ...Array(16).fill(4),
-    ...Array(20).fill(2),
-    ...Array(12).fill(1)
-  ];
-  const total = 26 * 7;
-  grid.innerHTML = '';
-  for(let i=0;i<total;i++){
-    const cell = document.createElement('div');
-    const level = levels[i % levels.length] || 0;
-    cell.className = `contrib-cell ${level ? `l${level}` : ''}`;
-    cell.title = `Learning log ${i + 1}`;
-    grid.appendChild(cell);
   }
 }
 
