@@ -1037,7 +1037,7 @@ header{
       <h1 class="profile-name">박재웅</h1>
       <div class="profile-username">@wodnddk97</div>
       <p class="profile-bio">
-        AI Vision 분석 결과를 API·데이터베이스·운영 화면으로 연결하는 프로젝트를 경험한 신입 개발자입니다. 현재는 Python과 OpenCV 기반 영상 분석 로직을 직접 구현하고 테스트하며 개발 기본기를 쌓고 있습니다.
+        AI Vision 입력 데이터를 분석하고, 결과를 API·데이터베이스·운영 화면의 저장·조회 흐름으로 연결한 프로젝트를 경험한 신입 개발자입니다. 현재는 Python과 OpenCV 기반 영상 분석 로직을 직접 구현하고 테스트하며 개발 기본기를 쌓고 있습니다.
       </p>
 
       <div class="profile-meta">
@@ -1052,7 +1052,7 @@ header{
           <strong>📚 AI Vision 학습 기록</strong>
         </div>
         <p class="learning-log-desc">
-          Python과 OpenCV로 영상 입력·프레임 처리·객체 검출·상태 분류를 단계적으로 구현하며, 테스트와 실제 프레임 확인으로 결과를 검증하고 있습니다.
+          Python·OpenCV 이미지 기초와 Mock 탐지 결과의 후처리, FastAPI 응답, pytest 검증을 단계적으로 실습했습니다.
         </p>
         <div class="learning-log-tags" aria-label="학습 기술">
           <span>Python</span><span>OpenCV</span><span>YOLO</span><span>FastAPI</span><span>pytest</span>
@@ -1342,7 +1342,7 @@ const projects = [
     name: 'traffic-analytics-system',
     cardName: 'Traffic Analytics Services',
     title: 'Traffic Analytics Services',
-    desc: '4월 29일 ~ 7월 1일에 진행한 프로젝트입니다. YOLO/OCR 기반 차량·번호판 인식, 과속 탐지, Spring Boot 저장 API, PostgreSQL 통계, Vue 관제 화면과 카메라 상태 지표 기반 모니터링의 확장 방향을 함께 다룹니다.',
+    desc: '차량·번호판 분석 결과를 FastAPI에서 Spring Boot 저장 API로 전달하고, PostgreSQL에 기록해 Vue 관제 화면에서 조회하는 팀 프로젝트입니다. 카메라 상태 모니터링은 별도 확장 설계로 정리했습니다.',
     period: '4월 29일 ~ 7월 1일',
     lang: 'Python/Java',
     color: '#3572A5',
@@ -1354,8 +1354,8 @@ const projects = [
       {label:'Work Log', url:'https://app.notion.com/p/Traffic-35126ace002380a2aceac70a3a8a89ae?source=copy_link'}
     ],
     tags: ['FastAPI', 'YOLO', 'PaddleOCR', 'Spring Boot', 'JWT', 'PostgreSQL', 'Vue', 'Docker', 'Time-series', 'Camera Health Monitoring'],
-    overview: '카메라 영상에서 차량 bbox를 감지하고 번호판 OCR과 속도 계산을 수행한 뒤, Spring Boot API와 PostgreSQL에 감지 로그/차량 흐름/과속 위반/시간대별 통계를 저장하는 교통 분석 시스템입니다. 후반부에는 카메라 FPS, 프레임 드롭, 지연, 흐림 같은 상태 지표를 시계열로 확인하고, 이상 이벤트와 정비 프로세스를 연결하는 확장 방향을 정리했습니다.',
-    role: ['Raspberry Pi 기반 카메라 영상 수집 구조를 운영 가정으로 두고 FastAPI 분석 흐름 정리', '카메라 영상 데이터 수집부터 AI 분석, 저장 API, 대시보드까지 이어지는 시스템 흐름 문서화', '프론트엔드와 백엔드 API 연동 검수 및 전체 코드 병합 관리', 'FastAPI AI 서버와 Spring Boot 저장 API 간 request/response 데이터 계약 정리', '기업 프로젝트 시연과 발표 진행'],
+    overview: '발표용 영상과 샘플 데이터를 바탕으로 차량 bbox, 번호판 OCR, 속도·과속 결과를 생성하고, Spring Boot API와 PostgreSQL에 감지 로그·차량 흐름·과속 위반·시간대별 통계로 저장해 Vue 화면에서 조회하는 교통 분석 시스템입니다. 카메라 FPS, 프레임 드롭, 지연, 흐림 지표와 이상 이벤트·정비 연계는 운영 기능과 구분한 확장 설계입니다.',
+    role: ['FastAPI 분석 서버와 Spring Boot 저장 API의 요청·응답 데이터 계약 정리', '감지 결과의 저장·조회 흐름과 API 필드명 연동 검수', '프론트엔드·백엔드·AI 서버 코드 병합 및 시연 흐름 정리', '요구사항·역할 분담·ERD 정리 제안과 개발 기록 문서화', '기업 프로젝트 시연과 발표 진행'],
     ownership: ['본인 담당: FastAPI 분석 흐름과 Spring Boot 저장 API의 요청·응답 계약 정리, 감지 결과 저장·조회 흐름 문서화', '협업·통합: 프론트엔드, 백엔드, AI 서버 코드 병합 및 API 필드명과 요청·응답 형식 검수', 'AI-assisted development: 분석 서버 연동 과정의 코드 작성·수정과 문서 정리에 AI 도구를 활용', '시연·검증 범위: 실제 도로 운영 데이터가 아니라 발표용 영상과 샘플 데이터를 사용'],
     architecture: 'Video / Camera / Raspberry Pi\n→ FastAPI AI Server\n   ├─ vehicle YOLO bbox\n   ├─ plate YOLO + OCR\n   ├─ speed tracking\n   └─ high-res OCR\n→ Spring Boot API\n→ PostgreSQL\n→ Vue Dashboard\n\nCamera Health Monitoring Extension (Design)\nCamera Health Sample → Rule/Trend Detection → Anomaly Event → Maintenance Ticket → Admin Ops Dashboard',
     checkpoints: {
@@ -1380,7 +1380,7 @@ const projects = [
     name: 'iat-ai-safety-system',
     cardName: 'IAT AI Safety System',
     title: 'IAT AI Safety System',
-    desc: 'AI 기반 무인 셔틀 장비 상태 모니터링 및 실시간 안전 관제 개인 프로젝트입니다. Spring Boot, FastAPI, Vue, PostgreSQL을 Docker Compose로 연동했습니다.',
+    desc: '이미지 분석 결과와 합성 센서 데이터를 FastAPI·Spring Boot·PostgreSQL·Vue의 처리·저장·조회 흐름으로 연결한 무인 셔틀 안전관제 프로토타입입니다. 주요 기능은 Docker Compose 로컬 환경에서 검증했습니다.',
     period: '4월 20일 ~ 6월 24일',
     lang: 'Python/FastAPI',
     color: '#3572A5',
@@ -1399,31 +1399,32 @@ const projects = [
     overview: '인천공항 무인 셔틀 운영 환경을 가정해 장비 센서 데이터, 이미지 기반 안전 이벤트, 알림 이력, PHM 분석 결과를 통합 관제하는 개인 포트폴리오 프로젝트입니다.',
     implementationSnapshot: [
       {
-        label: 'AI Vision 처리',
-        detail: '이미지 업로드 → YOLO 객체 탐지 → 원본·bbox 이미지 저장 → 안전 이벤트 화면 표시 흐름을 Docker Compose 로컬 환경에서 검증했습니다.',
+        label: '입력 데이터',
+        detail: '이미지 업로드와 deviceId·sampledAt·온도·진동·소음·failure label을 담은 포트폴리오용 합성 센서 CSV를 사용했습니다. 실제 공항·현장 데이터는 아닙니다.',
         links: [
-          {label:'YOLO 처리 코드', url:'https://github.com/woongpro416/iat-ai-phm-personal/blob/main/ai-server/services/safety_detection_service.py'}
+          {label:'센서 CSV 검증 코드', url:'https://github.com/woongpro416/iat-ai-phm-personal/blob/main/ai-server/training/phm_dataset_validator.py'}
         ]
       },
       {
-        label: 'PHM 입력 데이터',
-        detail: 'deviceId, sampledAt, temperature, vibration, noise, failure label로 구성한 포트폴리오용 합성 센서 CSV를 사용했습니다. 실제 공항·현장 데이터는 아닙니다.',
+        label: '처리 코드',
+        detail: 'FastAPI에서 YOLO 탐지와 원본·bbox 이미지 저장을 처리했습니다. 합성 센서 CSV는 필수값·시간 형식을 검증하고 시간 순서 분할과 과거값 rolling feature를 적용했습니다.',
         links: [
-          {label:'데이터 검증 코드', url:'https://github.com/woongpro416/iat-ai-phm-personal/blob/main/ai-server/training/phm_dataset_validator.py'}
-        ]
-      },
-      {
-        label: '오프라인 분석',
-        detail: '필수값·형식 검증 → 시간 순서 기반 분할과 horizon 구간 제거 → 과거값 기반 rolling feature → RandomForest baseline 학습·평가 흐름을 구성했습니다.',
-        links: [
+          {label:'YOLO 처리 코드', url:'https://github.com/woongpro416/iat-ai-phm-personal/blob/main/ai-server/services/safety_detection_service.py'},
           {label:'시간 분할', url:'https://github.com/woongpro416/iat-ai-phm-personal/blob/main/ai-server/training/phm_dataset_splitter.py'},
-          {label:'특징 추출', url:'https://github.com/woongpro416/iat-ai-phm-personal/blob/main/ai-server/training/phm_feature_engineering.py'},
+          {label:'특징 추출', url:'https://github.com/woongpro416/iat-ai-phm-personal/blob/main/ai-server/training/phm_feature_engineering.py'}
+        ]
+      },
+      {
+        label: '저장·분석 결과',
+        detail: '탐지 결과를 Spring Boot 안전 이벤트로 PostgreSQL에 저장하고 Vue 화면에서 조회했습니다. RandomForest는 별도 오프라인 baseline으로 학습·평가 보고서를 생성했습니다.',
+        links: [
+          {label:'안전 이벤트 저장·조회 코드', url:'https://github.com/woongpro416/iat-ai-phm-personal/blob/main/backend/src/main/java/com/example/demo/service/SafetyEventService.java'},
           {label:'학습·평가', url:'https://github.com/woongpro416/iat-ai-phm-personal/blob/main/ai-server/training/phm_baseline_trainer.py'}
         ]
       },
       {
         label: '검증 및 한계',
-        detail: 'Python 단위 테스트와 평가 보고서를 생성했습니다. RandomForest는 오프라인 학습·평가용 baseline이며, 현재 FastAPI 운영 추론은 rule baseline을 사용합니다.',
+        detail: 'Docker Compose 로컬 실행과 Python 단위 테스트로 흐름을 확인했습니다. 합성 데이터의 RandomForest는 오프라인 평가용이며, FastAPI의 PHM 추론은 별도 rule baseline입니다.',
         links: [
           {label:'baseline 범위 문서', url:'https://github.com/woongpro416/iat-ai-phm-personal/blob/main/docs/phm-baseline-comparison.md'}
         ]
